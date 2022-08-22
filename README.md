@@ -3,9 +3,6 @@
 **Title: Evaluating trade-off between socio-economic development and environmental outcomes in urban fringe area in the context of urban sprawl**
 
 
-
-```
-
 ## Dataset source
 
 |Name|Link|
