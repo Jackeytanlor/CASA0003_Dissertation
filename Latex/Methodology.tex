@@ -1,5 +1,7 @@
 \section{Methodology} 
-Figure \ref{structure} showed the framework of the whole study. The study points out the importance of urban fringe area in the literature review section. This study also reviews relevant scholarly research on the importance of the identification of spatial area. This information could help us to select the appropriate identification method. Besides, the literature review shows that studies tend to select urban development, climate change, and ecological space indicators to integrate and quantify value as urban development system and environmental system. Therefore, the section would use relevant data sources from urban development and environmental outcome to assess urban development and environmental outcomes in megacities. By using Python, R and GEE, the reproducible analysis would be accessed through \href{https://github.com/Jackeytanlor/CASA_Dissertation/blob/main/code/GEE_NDVI}{Github}.\\
+Figure \ref{structure} showed the framework of the whole study. The study points out the importance of urban fringe area in the literature review section. This study also reviews relevant scholarly research on the importance of the identification of spatial area. This information could help us to select the appropriate identification method. Besides, the literature review shows that studies tend to select urban development, climate change, and ecological space indicators to integrate and quantify value as urban development system and environmental system. Therefore, the section would use relevant data sources from urban development and environmental outcome to assess urban development and environmental outcomes in megacities. By using Python, R and GEE, the data and analysis would be accessed through \href{https://github.com/Jackeytanlor/CASA_Dissertation/blob/main/README.md}{Github}. 
+
+(\url{github.com/Jackeytanlor/CASA_Dissertation/blob/main/README.md})\\
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 \centering
@@ -44,19 +46,19 @@ Located in Yangtze River estuary, Shanghai (Figure \ref{lulc}b) is the economic 
 As this study requires data collection and analysis from the perspective of urban system and environmental system, the following data will be obtained and applied to the actual study.\\
 
 \subsubsection{NDVI}
-By using Landsat images on Google Earth Engine\href{https://github.com/Jackeytanlor/CASA_Dissertation/blob/main/code/GEE_NDVI}{(GEE)} remote sensing cloud computing platform, The 30m annual NDVI maximum dataset was used from 2013, 2016 and 2019. The NDVI data was calculated by using Landsat 8 remote sensing images from the US Landsat satellite. NDVI maximum for the research area was extracted from each month and generated the annual maximum data in each year. In Landsat 8, NDVI was calculated by using B5 and B4 bands.\\
+By using Landsat images on Google Earth Engine\href{https://github.com/Jackeytanlor/CASA_Dissertation/blob/main/code/GEE_NDVI.md}{(GEE)} remote sensing cloud computing platform, The 30m annual NDVI maximum dataset was used from 2013, 2016 and 2019. The NDVI data was calculated by using Landsat 8 remote sensing images from the US Landsat satellite. NDVI maximum for the research area was extracted from each month and generated the annual maximum data in each year. In Landsat 8, NDVI was calculated by using B5 and B4 bands.\\
 
 \subsubsection{Net Primary Production (NPP)}
-The global product MODIS (MOD17A3H V0006) Terra time series Net Primary Production (NPP)  at 500m spatial resolution and yearly compositing period was used from 2013, 2016 and 2019. The data source for this product is acquired through the United States Geological Survey (USGS) Land Process, and the data is merged and intercepted by \href{https://github.com/Jackeytanlor/CASA_Dissertation/blob/main/code/GEE_NDVI}{GEE} to produce data for the target area.\\
+The global product MODIS (MOD17A3H V0006) Terra time series Net Primary Production (NPP)  at 500m spatial resolution and yearly compositing period was used from 2013, 2016 and 2019. The data source for this product was acquired through the United States Geological Survey (USGS) Land Process, and the data is merged and intercepted by \href{https://github.com/Jackeytanlor/CASA_Dissertation/blob/main/code/GEE_NDVI.md}{GEE} to produce data for the target area.\\
 
 \subsubsection{PM2.5}
-By using artificial intelligence and considering the spatio-temporal heterogeneity of air pollution, PM2.5 from The China High Air Pollutants \href{https://weijing-rs.github.io/product.html}{(CHAP)} dataset was used from 2013, 2016 and 2019. The data source for this product, ground-level air pollution in China, could have long-term, full-coverage, high-resolution and high quality \parencite{wei_chinahighpm10_2021}. The dataset is acquired through open access link, and the data is merged and intercepted by R to extract data for the target area.\\
+By using artificial intelligence and considering the spatio-temporal heterogeneity of air pollution, PM2.5 from The China High Air Pollutants \href{https://weijing-rs.github.io/product.html}{(CHAP)} dataset was used from 2013, 2016 and 2019. The data source for this product, ground-level air pollution in China, could have long-term, full-coverage, high-resolution and high quality \parencite{wei_chinahighpm10_2021}. The dataset was acquired through open access link, and the data was merged and intercepted by R to extract data for the target area.\\
 
 \subsubsection{Land use land cover (LULC)}
 By using Landsat images on GEE, Landsat-derived annual land cover product of China (CLCD) from 2013, 2016 and 2019. In order to improve the spatial-temporal consistency of LULC compared with Landsat dataset, the dataset used a post-processing method, which may include spatial-temporal filtering and logical reasoning \parencite{yang_30_2021}. The dataset is acquired through \href{https://doi.org/10.5281/zenodo.4417810}{Zenodo} (\url{https://doi.org/10.5281/zenodo.4417810}).\\
 
 \subsubsection{Nighttime data (NT)}
-The global Nighttime data Suomi-NPP VIIRS-derived nighttime lights at 500m spatial resolution and yearly compositing period was used from 2013, 2016 and 2019. The data source for this product is acquired through National Oceanic and Atmospheric Administration \href{https://github.com/Jackeytanlor/CASA_Dissertation/tree/main/dataset/NT}{(NOAA)}.\\
+The global Nighttime data Suomi-NPP VIIRS-derived nighttime lights at 500m spatial resolution and yearly compositing period was used from 2013, 2016 and 2019. The data source for this product was acquired through National Oceanic and Atmospheric Administration \href{https://github.com/Jackeytanlor/CASA_Dissertation/tree/main/dataset/NT}{(NOAA)}.\\
 
 \subsection{Methods}
 \subsubsection{Identification of urban fringe area}
@@ -135,7 +137,7 @@ By comparing fringe area identified from the planning document from Guangzhou an
 \subfigure[Performance of section line in cluster n=7(Shanghai) ]{
 \includegraphics[width=6cm]{Figure/n7_sh.jpg}
 }
-\caption{The fluctuation of NT and DF values with section lines moving from south to north when n=7}
+\caption{The fluctuation of NT(Green) and DF(Red) values with section lines moving from south to north when n=7}
 \label{section}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
