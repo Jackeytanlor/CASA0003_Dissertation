@@ -1,0 +1,99 @@
+var l8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_RT_TOA");
+
+
+var year = 2019
+
+
+var provinces = table
+
+print(provinces);
+
+var index = 0;
+
+print("provinces.length is " + provinces.length);
+
+
+print("while loop is " + provinces[index]);
+
+var qu = provinces
+
+var AOI = provinces
+
+var startyear = year+"-01-01"
+
+var endyear = year+"-12-31"
+
+var landsat = l8
+
+    .filterBounds(AOI)
+
+    .filterDate(startyear, endyear);
+
+print (qu,'qu');
+
+print (landsat,'landsat');
+
+ 
+
+// NDVI calculation function landsat5 using B4 and B3 bands landsat8 using B5 and B4 bands
+
+var get_NDVI = function(image) {
+
+        var NDVI=image.normalizedDifference(['B5','B4']).rename(['NDVI']);
+
+        image=image.addBands(NDVI)
+
+        return image.select("NDVI")
+
+      };
+
+// Cropping the ROI area, calculating NDVI, and exporting the corresponding bands for each image in the image set
+
+var NDVI_Collection = ee.ImageCollection(landsat)
+
+          .map(get_NDVI);
+
+//print (NDVI_Collection,'NDVI_Collection');
+
+ 
+
+var greenest = NDVI_Collection.qualityMosaic('NDVI').clip(AOI).multiply(10000).toInt();
+
+print(greenest)
+
+ 
+// View the general effect
+
+Export.image.toDrive({
+
+    image: greenest,
+
+    description: qu,
+
+    folder : 'ndvi'+year,
+
+    fileNamePrefix: qu,
+
+    scale: 30,
+
+    maxPixels: 1e13,
+
+    // crs:'EPSG:32649',
+
+    region: AOI.geometry(),
+
+    fileFormat: 'GeoTIFF',
+
+    // formatOptions: {
+
+    //   cloudOptimized: true
+
+    // }
+
+});
+
+Map.centerObject(AOI, 5);
+
+Map.addLayer(greenest,{palette: ['black', 'green', 'red']},'greenest')
+
+index ++;
