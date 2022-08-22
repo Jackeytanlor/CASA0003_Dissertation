@@ -7,8 +7,8 @@
 
 |Name|Link|
 |:--|:--|
-|NDVI_GEE|https://github.com/Jackeytanlor/CASA_Dissertation/blob/main/code/GEE_NDVI|
-|NPP_GEE|https://github.com/Jackeytanlor/CASA_Dissertation/blob/main/code/GEE_NPP|
+|NDVI_GEE|https://github.com/Jackeytanlor/CASA_Dissertation/blob/main/code/GEE_NDVI.md|
+|NPP_GEE|https://github.com/Jackeytanlor/CASA_Dissertation/blob/main/code/GEE_NPP.md|
 |PM2.5|	https://weijing-rs.github.io/product.html|
 |LULC|	https://doi.org/10.5281/zenodo.4417810|
 |Nighttime data(NT)|https://eogdata.mines.edu/products/vnl/|
